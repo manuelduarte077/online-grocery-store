@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hardsoftday.onlinegrocerystore.R;
-import com.hardsoftday.onlinegrocerystore.models.DiscountedProducts;
+import com.hardsoftday.onlinegrocerystore.models.DiscountedProduct;
 
 import java.util.List;
 
 public class DiscountedProductAdapter extends RecyclerView.Adapter<DiscountedProductAdapter.DiscountedViewHolder> {
 
     Context context;
-    List<DiscountedProducts> discountedProductsList;
+    List<DiscountedProduct> discountedProductList;
 
-    public DiscountedProductAdapter(Context context, List<DiscountedProducts> discountedProductsList) {
+    public DiscountedProductAdapter(Context context, List<DiscountedProduct> discountedProductList) {
         this.context = context;
-        this.discountedProductsList = discountedProductsList;
+        this.discountedProductList = discountedProductList;
     }
 
     @NonNull
@@ -37,13 +37,13 @@ public class DiscountedProductAdapter extends RecyclerView.Adapter<DiscountedPro
     @Override
     public void onBindViewHolder(@NonNull DiscountedViewHolder holder, int position) {
 
-        holder.discountImage.setImageResource(discountedProductsList.get(position).getImageUrl());
+        holder.discountImage.setImageResource(discountedProductList.get(position).getImageUrl());
 
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return discountedProductList.size();
     }
 
 

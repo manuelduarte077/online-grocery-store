@@ -1,11 +1,11 @@
 package com.hardsoftday.onlinegrocerystore.models;
 
-public class DiscountedProducts {
+public class DiscountedProduct {
 
     Integer id;
     Integer imageUrl;
 
-    public DiscountedProducts(Integer id, Integer imageUrl) {
+    public DiscountedProduct(Integer id, Integer imageUrl) {
         this.id = id;
         this.imageUrl = imageUrl;
     }

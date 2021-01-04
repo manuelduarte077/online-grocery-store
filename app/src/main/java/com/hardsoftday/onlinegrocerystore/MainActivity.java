@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.hardsoftday.onlinegrocerystore.adapter.DiscountedProductAdapter;
-import com.hardsoftday.onlinegrocerystore.models.DiscountedProducts;
+import com.hardsoftday.onlinegrocerystore.models.DiscountedProduct;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,19 +23,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        List<DiscountedProducts> discountedProductsList = new ArrayList<>();
-        discountedProductsList.add(new DiscountedProducts(1, R.drawable.discountberry));
-        discountedProductsList.add(new DiscountedProducts(2, R.drawable.discountbrocoli));
-        discountedProductsList.add(new DiscountedProducts(3, R.drawable.discountmeat));
-        setDiscountRecycler(discountedProductsList);
+        List<DiscountedProduct> discountedProductList = new ArrayList<>();
+        discountedProductList.add(new DiscountedProduct(1, R.drawable.discountberry));
+        discountedProductList.add(new DiscountedProduct(2, R.drawable.discountbrocoli));
+        discountedProductList.add(new DiscountedProduct(3, R.drawable.discountmeat));
+        setDiscountRecycler(discountedProductList);
 
     }
 
-    private void setDiscountRecycler(List<DiscountedProducts> discountedProductsList) {
+    private void setDiscountRecycler(List<DiscountedProduct> discountedProductList) {
         discountRecyclerView = findViewById(R.id.discountRecycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         discountRecyclerView.setLayoutManager(layoutManager);
-        discountedProductAdapter = new DiscountedProductAdapter(this, discountedProductsList);
+        discountedProductAdapter = new DiscountedProductAdapter(this, discountedProductList);
         discountRecyclerView.setAdapter(discountedProductAdapter);
 
     }
